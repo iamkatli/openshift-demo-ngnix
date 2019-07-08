@@ -3,7 +3,7 @@
 image = wicksy/openshift-demo-app
 
 build:
-	docker build --no-cache=true -t ${image}:latest .
+	docker build --no-cache=true -v data:/ -t ${image}:latest .
 
 clean:
 	-docker kill `docker ps -aq`
